@@ -3,18 +3,17 @@
 // КУРСЫ
 
 
+    // ----------ОПЕРАТОРЫ.  ИНКРЕМЕНТ И ДЕКРЕМЕНТ (ПРЕФИКСНЫЙ И ПОСТФИКСТНЫЙ)--------------
 
-// ОПЕРАТОРЫ.  ИНКРЕМЕНТ И ДЕКРЕМЕНТ (ПРЕФИКСНЫЙ И ПОСТФИКСТНЫЙ)
 
+// let incr = 10,
+// 	 decr = 10;
 
-let incr = 10,
-	 decr = 10;
+// console.log(incr++);  // ответ 10
+// console.log(decr--);  // ответ 10
 
-console.log(incr++);  // ответ 10
-console.log(decr--);  // ответ 10
-
-console.log(++incr);  // ответ 11
-console.log(--decr);  // ответ 9
+// console.log(++incr);  // ответ 11
+// console.log(--decr);  // ответ 9
 
 // && - оператор и
 // || - оператор или 
@@ -24,6 +23,40 @@ console.log(--decr);  // ответ 9
 
 
 
+      //----------УСЛОВИЯ---------------      
+
+
+// тернарный оператор 
+
+// let num = 50;
+// (num === 50) ? console.log("ok!") : console.log('Error');
+
+
+// swith case
+
+// let num = 50;
+// switch (num) {
+// 	case 49: 
+// 		console.log('Неверно');
+// 		break;
+// 	case 50:
+// 		console.log('В точку!');
+// 		break;
+// 	default:
+// 		console.log('Не в этот раз');
+// 		break;
+// }
+
+// if else
+
+// let num = 50;
+// if (num > 50) {
+// 	console.log('Неверно');
+// } else if (num < 50) {
+// 	console.log('Неверно');
+// } else {
+// 	console.log('В точку!');
+// }
 
 
 
@@ -31,7 +64,81 @@ console.log(--decr);  // ответ 9
 
 
 
-// ОБЪЕКТЫ
+     //----------ЦИКЛЫ---------------
+
+
+ //  while 
+
+// let num = 50;
+// while (num < 55) {
+// 	console.log(num);
+// 	num++;
+// }
+ 
+// do while 
+
+// do {
+// 	console.log(num);
+// 	num++;
+// }
+// while (num < 55);
+
+// FOR
+
+// let value = 10;
+// for (let i = 1; i < value; i++) {
+// 	console.log(i);
+// }
+
+// for (let i = 1; i < 10; i++) {
+// 	if (i == 6) {
+// 		break; // прерывает цикл
+//		   continue; // пропускает определенный шаг
+// 	}
+// 	console.log(i);
+// }
+
+
+
+
+
+
+   // -------------СВОЙСТВА и МЕТОДЫ СТРОКИ И ЧИСЕЛ------------------ 
+
+// const str = 'Hello world';
+
+// Верхний и нижний регистр
+// console.log(str.toUpperCase()); 
+// console.log(str.toLowerCase()); 
+
+// Найти кусок подстроки и с какого номера начинается
+// console.log(str.indexOf('w'));
+
+// Найти кусок строки от введенного числа и до введеного
+// console.log(str.slice(6, 11));
+// console.log(str.slice(6));
+
+
+// const num = 12.2;
+
+// Округление к ближ целому числу
+// console.log(Math.round(num));
+
+// const test = '12.2px';
+
+// Переводит строку в целое число
+// console.log(parseInt(test));
+// Переводит строку в дробное число
+// console.log(parseFloat(test));
+
+
+
+
+
+
+
+
+      // -----------ОБЪЕКТЫ--------------
 
 
 // let people = {
@@ -47,7 +154,7 @@ console.log(--decr);  // ответ 9
 
 
 
-// ФУНКЦИИ 
+      // -------------ФУНКЦИИ------------------ 
 
 
 // function bark(name, weight) {
@@ -85,3 +192,7 @@ console.log(--decr);  // ответ 9
 // let array = [5, 7, 35];
 
 // summa(array);
+
+
+
+
