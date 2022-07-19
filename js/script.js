@@ -12,7 +12,8 @@
 // git commit -a -m"название"
 // git push
 
-
+// Если открываешь файл с гитбаха, чтоб он обновился до последних изменений 
+// git pull
 
 
 
@@ -120,6 +121,7 @@
 
    // -------------СВОЙСТВА и МЕТОДЫ СТРОКИ И ЧИСЕЛ------------------ 
 
+
 // const str = 'Hello world';
 
 // Верхний и нижний регистр
@@ -139,6 +141,9 @@
 // Округление к ближ целому числу
 // console.log(Math.round(num));
 
+// Округление до ближ меньшего
+// console.log(Math.floor(num));
+
 // const test = '12.2px';
 
 // Переводит строку в целое число
@@ -156,58 +161,182 @@
       // -----------ОБЪЕКТЫ--------------
 
 
-// let people = {
-// 	name: 'Danik',
-// 	age: 19,
-// 	city: 'Brest',
-// }
-// people.street = 'Lenina'; // добавление элемента
-// delete people.street;     // удаление элемента
+// const options = {
+// 	name: 'test',
+// 	width: 1024,
+// 	heigth: 1024,
+// 	colors: {
+// 		border: 'black',
+// 		bg: 'red'
+// 	},
+// 	makeTest: function() {
+// 		console.log('Test');
+// 	}
+// };
+// options.makeTest();
 
-
-
-
-
-
-      // -------------ФУНКЦИИ------------------ 
-
-
-// function bark(name, weight) {
-// 	if (weight > 20) {
-// 		console.log(name + ' WOOF WOOF');
+// ПЕРЕЕБИРАЕМ СВОЙСТВА ОБЪЕКТА FOR IN
+// for (let key in options) {
+// 	if (typeof(options[key]) === 'object') {
+// 		for (let i in options[key]) {
+// 			console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+// 		}
 // 	} else {
-// 		console.log(name + ' woof woof');
+// 		console.log(`Свойство ${key} имеет значение ${options[key]}`);
 // 	}
 // }
-// bark('barsik', 22);
-// bark('sharik', 10);
+
+// delete options.name;                      // удаление элемента
+// console.log(Object.keys(options).length); // количество элементов
+// const {border, bg} = options.colors;      // деструктуризация объектов
+// console.log(border);
 
 
-// function whatShallWear(temp) {
-// 	if (temp < 60) {
-// 		console.log('Wear a jacket');
-// 	} else if (temp < 70) {
-// 		console.log('Wear a sweater');
-// 	} else {
-// 		console.log('Wear t-shirt');
+// КЛОНИРОВАНИЕ ОБЪЕКТОВ 
+
+// function copy (mainObj) {
+// 	let objCopy = {};
+
+// 	let key;
+// 	for (key in mainObj) {
+// 		objCopy[key] = mainObj[key];
 // 	}
+// 	return objCopy;
 // }
-// whatShallWear(60);
-// whatShallWear(50);
-// whatShallWear(80);
-
-
-// function summa(arr) {
-// 	let sum = 0;
-// 	for (let i = 0; i < arr.length; i++) {
-// 		sum += arr[i];
-// 	console.log(sum);
+// const numbers = {
+// 	a: 2,
+// 	b: 5,
+// 	c: {
+// 		x: 7,
+// 		y: 4,
 // 	}
+// };
+// const newNumbers = copy(numbers);
+// newNumbers.a = 10;
+// console.log(numbers);
+// console.log(newNumbers);
+
+
+// СОЕДИНЕНИЕ ДВУХ ОБЪЕКТОВ (Object.assign)
+
+// const numbers = {
+// 	a: 2,
+// 	b: 5,
+// 	c: {
+// 		x: 7,
+// 		y: 4,
+// 	}
+// };
+// const add = {
+// 	d: 17,
+// 	e: 20,
+// };
+// console.log(Object.assign(numbers, add));
+
+
+
+
+
+
+
+
+
+
+      //-------------МАССИВЫ------------------ 
+
+
+// const arr = [1, 2, 3, 6, 8];
+
+// arr.pop();        //  удаляет последний элемент
+// arr.push(10);     // добавляет элемент в конец
+// arr.shift();      // удаляет первый элемент
+// arr.unshift(15);  // добавляет элемент в начало массива
+// arr.splice(1, 1); // удаление определенных элементов
+
+
+// Перебор элементов массива
+
+// for (let i = 0; i < arr.length; i++) {
+// 	console.log(arr[i]);
 // }
-// let array = [5, 7, 35];
 
-// summa(array);
+// for (let value of arr) {
+// 	console.log(value);
+// }
+
+
+// Метод forEach
+
+// arr.forEach(function(item, index, array) {
+// 	console.log(`элемент ${item} находится под номером ${index} в массиве ${array}`);
+// });
+
+
+// КОПИРОВАНИЕ МАССИВА
+
+// const  oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[0] = 'abc';
+// console.log(oldArray);
+// console.log(newArray);
 
 
 
 
+
+
+
+       //-------------ОСНОВЫ ООП------------------ 
+
+
+// const soldier = {  // главный протатип
+// 	health: 400,
+// 	armor: 100,
+// 	sayHello: function() {
+// 		console.log("hello");
+// 	}
+// };
+// const Jonh = {
+// 	health: 100,
+// };
+
+// Object.setPrototypeOf(Jonh, soldier); // наследуем свойства главного протатипа
+
+// const Jonh = Object.create(soldier); // или так наследуем
+
+// console.log(Jonh.armor);
+// Jonh.sayHello();
+
+
+
+
+
+
+
+  //-------------ДИНАМИЧЕСКАЯ ТИПИЗАЦИЯ------------------ 
+
+
+   // To String 
+
+// console.log(typeof(String(null)));
+
+
+   // To Number 
+
+// console.log(typeof(Number('4')));
+// ИЛИ 
+// console.log(typeof(+'5'));
+
+
+   // To Boolean
+
+let switcher = null;
+if (switcher) {
+	console.log('Working...');
+}
+
+switcher = 1;
+if (switcher) {
+	console.log('Working...');
+}
